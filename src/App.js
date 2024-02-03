@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Product from './components/Product';
+import Cart from './components/Cart';
+import Notfound from './components/Notfound';
+import CartcontextProvider from './components/Cartcontext';
+import Showproductprovider from './components/Showproduct';
+import LoginComponent from './components/LoginComponent';
+import Register from './components/Register';
+import Electronics from './components/Electronics';
+import Contact from './components/Contact';
 import './App.css';
 
 function App() {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+ 
+    <div className="main-class">
+      <Router>
+        <CartcontextProvider>
+          <Showproductprovider>
+            <Navbar />
+            <Switch>
+               <Route path="/LoginComponent" exact component={LoginComponent}/>
+              <Route path="/Cart" exact component={Cart} />
+              <Route path="/Product" exact component={Product} />
+              <Route path="/Electronics" exact component={Electronics}/>
+              <Route path="/Notfound" exact component={Notfound} />
+              <Route path="/Contact" exact component={Contact}/>
+              <Route path="/Register" exact component={Register} />
+              <Route component={Notfound} />
+            </Switch>
+          </Showproductprovider>
+        </CartcontextProvider>
+      </Router>
     </div>
   );
 }
 
 export default App;
+
