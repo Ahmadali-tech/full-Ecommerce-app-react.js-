@@ -9,7 +9,6 @@ import Showproductprovider from './components/Showproduct';
 import LoginComponent from './components/LoginComponent';
 import Register from './components/Register';
 import Electronics from './components/Electronics';
-import Contact from './components/Contact';
 import './App.css';
 
 function App() {
@@ -27,7 +26,6 @@ function App() {
               <Route path="/Product" exact component={Product} />
               <Route path="/Electronics" exact component={Electronics}/>
               <Route path="/Notfound" exact component={Notfound} />
-              <Route path="/Contact" exact component={Contact}/>
               <Route path="/Register" exact component={Register} />
               <Route component={Notfound} />
             </Switch>
