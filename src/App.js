@@ -9,6 +9,7 @@ import Showproductprovider from './components/Showproduct';
 import LoginComponent from './components/LoginComponent';
 import Register from './components/Register';
 import Electronics from './components/Electronics';
+import Home from'./components/Home';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Showproductprovider>
             <Navbar />
             <Switch>
+              <Route path='/Homepage'exact component={Home}/>
                <Route path="/LoginComponent" exact component={LoginComponent}/>
               <Route path="/Cart" exact component={Cart} />
               <Route path="/Product" exact component={Product} />

@@ -9,6 +9,8 @@ const Product = () => {
 
   function handleAddToCart(product) {
     dispatch({ type: 'ADD_TO_CART', payload: product, id: product.quantity });
+   console.log(product.id,"...>>>>>>>>");
+
   }
 
   return (
